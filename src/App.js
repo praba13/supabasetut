@@ -9,9 +9,9 @@ function App() {
   return (
     <BrowserRouter>
       <nav>
-        <h1>Supabase PR</h1>
+        <h1>Supabase PR Cars</h1>
         <Link to='/'>Home</Link>
-        <Link to='/create'>Create New Supabase PR</Link>
+        <Link to='/create'>Create New Supabase PR Cars</Link>
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
