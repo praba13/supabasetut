@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 :root {
-  --primary: #a718b9;
+  --primary: #34696d;
   --secondary: #195e41;
 }
 
@@ -63,6 +63,18 @@ nav h1 {
   padding: 20px 0;
   line-height: 0px;
   text-align: center;
+}
+.smoothie-card .buttons {
+  text-align: right;
+}
+.smoothie-card i {
+  color: #bbb;
+  margin-left: 10px;
+  font-size: 1.2em;
+  padding: 6px;
+  background: #eee;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /* forms */
