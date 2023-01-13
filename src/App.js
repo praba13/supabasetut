@@ -11,7 +11,7 @@ function App() {
       <nav>
         <h1>Supabase PR Cars</h1>
         <Link to='/'>Home</Link>
-        <Link to='/create'>Create New Supabase PR Cars</Link>
+        <Link to='/create'>Create New PR Cars</Link>
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
