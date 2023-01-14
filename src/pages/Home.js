@@ -6,6 +6,7 @@ const Home = () => {
   //console.log(supabase);
   const [fetchError, setFetchError] = useState(null);
   const [smoothies, setSmoothies] = useState(null);
+  const [orderBy, setOrderBy] = useState('created_at');
 
   const handleDelete = (id) => {
     setSmoothies((prevCars) => {
@@ -15,7 +16,10 @@ const Home = () => {
 
   useEffect(() => {
     const fetchSmoothies = async () => {
-      const { data, error } = await supabase.from('smoothies').select(); // table name
+      const { data, error } = await supabase
+        .from('smoothies') // table name ,
+        .select()
+        .order(orderBy, { ascending: false }); // ascending by defalut is true ,
 
       if (error) {
         setFetchError('Could not fetch the smoothies');
@@ -28,13 +32,23 @@ const Home = () => {
       }
     };
     fetchSmoothies();
-  }, []);
+  }, [orderBy]);
 
   return (
     <div className='page home'>
       {fetchError && <p>{fetchError}</p>}
       {smoothies && (
         <div className='smoothies'>
+          <div className='order-by'>
+            <p>Oder By</p>
+            <button onClick={() => setOrderBy('created_at')}>
+              Time Created
+            </button>
+            <button onClick={() => setOrderBy('title')}>Title</button>
+            <button onClick={() => setOrderBy('rating')}>Rating</button>
+            {/*{orderBy} */}
+            {orderBy}
+          </div>
           <div className='smoothie-grid'>
             {smoothies.map((smoothie) => (
               <SmoothieCard
